@@ -1,0 +1,88 @@
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.table > thead {
+  color: #fff;
+  background: #f3123c;
+}
+
+/* Paginação */
+.page-link {
+  color: #f3123c !important;
+}
+
+.page-item.active .page-link {
+  color: #fff !important;
+  background-color: #f3123c !important;
+  border-color: #f3123c !important;
+}
+
+.quantidade-linha-atual {
+  margin-top: 5px;
+}
+
+.qtdview {
+  color: darkgray !important;
+}
+
+/* Paginação END */
+
+.btn-danger {
+  color: #fff !important;
+  background-color: #f3123c !important;;
+  border-color: #f3123c !important;;
+  cursor: pointer !important;;
+}
+
+.btn-info {
+  color: #fff !important;
+  background-color: #0cb8d3 !important;;
+  border-color: #0cb8d3 !important;;
+  cursor: pointer !important;;
+}
+
+.obrigatorio {
+  color: #f3123c;
+  font-weight: bold;
+}
+
+.actions{
+  margin-top: 30px !important;
+}
+
+.bg-black {
+  border-color: black !important;
+}
+
+.menuDonw {
+  margin-top: 8px!important;
+}
+
+.hr-margin {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.padding-0 {
+  padding: 0px !important;
+}
+
+.edit {
+  margin-top: 5px;
+  color:#02434d;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.remove {
+  margin-top: 5px;
+  color:#f3123c;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+ngb-datepicker.dropdown-menu {
+  will-change: unset !important;
+}

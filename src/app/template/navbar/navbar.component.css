@@ -1,0 +1,15 @@
+nav {
+  margin-bottom: 10px;
+}
+
+li {
+  cursor: pointer;
+}
+
+.nav-link.dropdown-toggle {
+  color: white;
+}
+
+.nav-color {
+  background-color: #302e30 !important;
+}

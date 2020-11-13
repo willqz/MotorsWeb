@@ -1,0 +1,66 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-0">
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+      <h3 class="text-muted">Anúncios cadastrados</h3>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-right ">
+      <button type="button" class="btn btn-light btn-filtrar bg-black mr-1" (click)="pesquisar()">
+        <i class="fa fa-search" aria-hidden="true"></i> Filtrar</button>
+      <button type="button" class="btn btn-danger ml-1" [routerLink]="['/anuncio']">
+        <i class="fa fa-plus" aria-hidden="true"></i> Novo</button>
+    </div>
+  </div>
+</div>
+<hr class="hr-margin" />
+<div class="row mt-2">
+  <div class="col">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#Código</th>
+          <th class="text-center">Marca</th>
+          <th class="text-center">Modelo</th>
+          <th class="text-center">Versão</th>
+          <th class="text-center">Ano</th>
+          <th class="text-center">KM</th>
+          <th class="text-center">Observações</th>
+          <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaAnuncios">
+          <th scope="row" style="width: 5%;">{{item.id}}</th>
+          <td class="text-center">{{item.marca}}</td>
+          <td class="text-center">{{item.modelo}}</td>
+          <td class="text-center">{{item.mersao}}</td>
+          <td class="text-center">{{item.ano}}</td>
+          <td class="text-center">{{item.quilometragem}}</td>
+          <td class="text-center">{{item.observacao}}</td>
+          <td class="text-center" style="padding-bottom: 0px;padding-top: 10px;" >
+            <div class="form-group" style="margin: 0px;padding: 0px;">
+              <i class="fa fa-edit edit"  data-toggle="tooltip" title="Editar" aria-hidden="true" [routerLink]="['/anuncio', item.id]"></i>
+              <i class="fa fa-trash remove" data-toggle="tooltip" title="Excluir" aria-hidden="true" (click)="excluir(item.id)"></i>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-auto mr-auto">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+  </div>
+  <div class="col-auto quantidade-linha-atual">
+    <span>{{quantidadeLinhaAtual}} de {{collectionSize}} registro(s)</span>
+  </div>
+  <div class="col-auto">
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+      <option [ngValue]="10">10 itens por página</option>
+      <option [ngValue]="50">50 itens por página</option>
+      <option [ngValue]="100">100 itens por página</option>
+    </select>
+  </div>
+</div>
